@@ -1,0 +1,11 @@
+# React
+Diary Product Frontend/node_modules/
+Diary Product Frontend/build/
+Diary Product Frontend/.env
+
+# Django
+Dairy Product Backend/venv/
+Dairy Product Backend/__pycache__/
+Dairy Product Backend/*.pyc
+Dairy Product Backend/db.sqlite3
+Dairy Product Backend/.env

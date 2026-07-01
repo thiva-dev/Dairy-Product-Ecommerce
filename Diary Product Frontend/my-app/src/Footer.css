@@ -1,0 +1,167 @@
+.footer {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 70px 8% 20px;
+  border-top-right-radius: 40px;
+  border-top-left-radius: 40px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+  gap: 40px;
+}
+
+/* Logo Section */
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.footer-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.logo-box h2 {
+  font-size: 24px;
+  margin-bottom: 3px;
+}
+
+.logo-box p {
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+.description {
+  color: #94a3b8;
+  line-height:1.5;
+  margin-bottom: 20px;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 25px;
+}
+
+.social-icons svg {
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social-icons svg:hover {
+  transform: translateY(-3px);
+}
+
+/* Common Sections */
+.footer-section h3 {
+  margin-bottom: 18px;
+  font-size: 18px;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 12px;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-section ul li:hover {
+  color: white;
+  padding-left: 5px;
+
+}
+
+/* Newsletter */
+.footer-section p {
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.newsletter {
+  display: flex;
+  margin-top: 15px;
+}
+
+.newsletter input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  outline: none;
+  border-radius: 8px 0 0 8px;
+  font-size: 14px;
+}
+
+.newsletter button {
+  border: none;
+  padding: 12px 18px;
+  background: #22c55e;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 8px 8px 0;
+  transition: 0.3s;
+}
+
+.newsletter button:hover {
+  background: #109942;
+}
+
+/* Divider */
+.footer hr {
+  border: none;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin: 40px 0 20px;
+}
+
+/* Bottom */
+.footer-bottom {
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .logo-box {
+    justify-content: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .newsletter {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .newsletter input,
+  .newsletter button {
+    width: 100%;
+    border-radius: 8px;
+  }
+}
