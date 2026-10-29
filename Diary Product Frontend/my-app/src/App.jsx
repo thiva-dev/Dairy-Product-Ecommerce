@@ -8,6 +8,9 @@ import Categories from "./Pages/Categories";
 import Admin from "./Pages/Admin";
 import Home from "./Home";
 import Addtocart from "./Pages/Addtocart";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+
 
 function App() {
   return (
@@ -25,6 +28,8 @@ function App() {
           </>
         }
       />
+    <Route path="/about" element={<About />} />
+    <Route path="/contact" element={<Contact />} />
     <Route path="/Categories" element={<Categories/>} />
     <Route path="/admin" element={<Admin/>}/>
     <Route path="/Addtocart" element={<Addtocart/>}/>

@@ -47,6 +47,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import RegisterSerializer
+from rest_framework.authtoken.models import Token
 
 @api_view(['POST'])
 def register(request):
@@ -68,7 +69,12 @@ def login_view(request):
     
     user = authenticate(username=username, password=password)
     if user:
-        return Response({'message': 'Login success!', 'username': user.username})
+        token, _ = Token.objects.get_or_create(user=user)
+        return Response({
+            'message': 'Login success!',
+            'username': user.username,
+            'token': token.key,
+        })
     return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
 
         # Add to cart

@@ -19,7 +19,7 @@ urlpatterns = [
     path('register/', register),
     path('login/', login_view),
 
-    # cart urls - idhu add pannunga
+    # cart urls 
     path('cart/', get_cart),
     path('cart/add/', add_to_cart),
     path('cart/update/<int:item_id>/', update_cart_item),

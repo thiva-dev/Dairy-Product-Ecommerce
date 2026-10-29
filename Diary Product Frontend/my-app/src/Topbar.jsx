@@ -62,8 +62,8 @@ function Topbar() {
         <ul className="navlist mt-3 fw-medium">
           <li><a href="/">Home</a></li>
           <li><a href="/Categories">Categories</a></li>
-          <li><a href="">About us</a></li>
-          <li><a href="">Contact</a></li>
+          <li><a href="/About">About us</a></li>
+          <li><a href="/Contact">Contact us</a></li>
         </ul>
     <div className="position-relative ms-5 ps-3" style={{ width: "400px" }}>
       <input

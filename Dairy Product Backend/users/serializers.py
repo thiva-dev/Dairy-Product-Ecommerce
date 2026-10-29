@@ -52,7 +52,7 @@ class CartItemSerializer(serializers.ModelSerializer):
         fields = ['id', 'product', 'product_id', 'quantity', 'subtotal']
 
     def get_subtotal(self, obj):
-        return obj.subtotal()
+        return float(obj.subtotal())
 
 
 class CartSerializer(serializers.ModelSerializer):
@@ -65,7 +65,7 @@ class CartSerializer(serializers.ModelSerializer):
         fields = ['id', 'items', 'total_amount', 'total_items']
 
     def get_total_amount(self, obj):
-        return obj.total_amount()
+        return float(obj.total_amount())
 
     def get_total_items(self, obj):
         return obj.total_items()

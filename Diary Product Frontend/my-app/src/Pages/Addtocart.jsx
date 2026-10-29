@@ -10,16 +10,20 @@ function Addtocart() {
   const token = localStorage.getItem("token");
   const headers = { Authorization: `Token ${token}` };
 
-  const fetchCart = async () => {
-    try {
-      const res = await axios.get("http://127.0.0.1:8000/api/cart/", { headers });
-      setCart(res.data);
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  };
+ const fetchCart = async () => {
+  if (!token) {
+    setLoading(false);
+    return;
+  }
+  try {
+    const res = await axios.get("http://127.0.0.1:8000/api/cart/", { headers });
+    setCart(res.data);
+  } catch (err) {
+    console.error(err.response?.data || err.message);
+  } finally {
+    setLoading(false);
+  }
+};
 
   useEffect(() => {
     fetchCart();
@@ -82,7 +86,9 @@ function Addtocart() {
           <div className="cart-items-box">
             {cart.items.map((item) => (
               <div key={item.id} className="cart-item">
-                <img src={item.product.image} alt={item.product.name} />
+                <img src={item.product.image?.startsWith("http") ? item.product.image : `http://127.0.0.1:8000${item.product.image}`}
+                alt={item.product.name}
+                />
                 <div className="item-info">
                   <h5>{item.product.name}</h5>
                   <p className="unit">{item.product.unit}</p>

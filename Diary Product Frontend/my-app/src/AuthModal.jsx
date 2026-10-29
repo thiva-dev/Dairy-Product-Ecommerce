@@ -19,6 +19,7 @@ function AuthModal({ isOpen, onClose,onLoginSuccess }) {
           username: email,
           password: password,
         });
+        localStorage.setItem("token", response.data.token);
         alert("Welcome " + response.data.username);
         onLoginSuccess({username:response.data.username});
         onClose();
@@ -39,7 +40,8 @@ function AuthModal({ isOpen, onClose,onLoginSuccess }) {
         alert("Account created! Please login.");
         setIsLogin(true);
       } catch (error) {
-        alert("Registration failed! Try again.");
+  console.log(error.response?.data || error.message);
+  alert("Registration failed! " + JSON.stringify(error.response?.data || error.message));
       }
     }
   };
